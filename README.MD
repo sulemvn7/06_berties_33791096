@@ -50,11 +50,23 @@ const db = mysql.createPool({
 
 });
 
+Audit Section
+
+The app implements audit logging for login attempts. Every login, whether successful or failed, is recorded in the audit_log table with:
+
+username attempted
+
+success status (1 = success, 0 = failed)
+
+timestamp of the attempt
+
+Users can view the full audit history by visiting /users/audit. This feature helps track access to the system and monitor failed login attempts.
 
 💻 Installation 
 1.Clone your github repository: git clone <your repositiory link>. 
 2.Install dependencies using npm install. 
 3.Run node index.js to access the Berties Books App.
+
 
 
 
