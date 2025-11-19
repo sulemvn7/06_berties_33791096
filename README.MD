@@ -2,7 +2,7 @@
 
 Description
 
-Bertie's Books is a dynamic web application built using Node.js and Express. It demonstrates routing with Express Router, rendering pages with EJS templates, handling GET and POST requests, and basic form validation. The app simulates a small book shop where users can browse available books, search for books, add new books, view bargain books, and register as customers.
+Bertie's Books is a dynamic web application built using Node.js and Express. It demonstrates routing with Express Router, rendering pages with EJS templates, handling GET and POST requests, and basic form validation. The app simulates a small book shop where users can browse available books, search for books, add new books, view bargain books, and register/login as customers and see all registered users..
 
 The application includes all the existing routes from the previous Lab 6 work and now includes these newly added routes:
 
@@ -66,6 +66,7 @@ Users can view the full audit history by visiting /users/audit. This feature hel
 1.Clone your github repository: git clone <your repositiory link>. 
 2.Install dependencies using npm install. 
 3.Run node index.js to access the Berties Books App.
+
 
 
 
