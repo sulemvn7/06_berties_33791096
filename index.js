@@ -24,7 +24,7 @@ app.locals.shopData = {shopName: "Bertie's Books"}
 
 // Define the database connection pool
 const db = mysql.createPool({
-    host: process.env.BB_HOST,
+    host: 'localhost',
     user: process.env.BB_USER,
     password: process.env.BB_PASSWORD,
     database: process.env.BB_DATABASE,
@@ -49,6 +49,7 @@ app.use('/books', booksRoutes)
 
 // Start the web app listening
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
 
 
 
