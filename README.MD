@@ -30,7 +30,7 @@ bcrypt (for password hashing)
 
 dotenv (for environment variable management)
 
-Dotenv  Section
+📝Dotenv  Section
 
 The project uses the dotenv Node.js module to secure database credentials. Database connection details are stored in a .env file and loaded using:
 
@@ -50,7 +50,7 @@ const db = mysql.createPool({
 
 });
 
-Audit Section
+📝Audit Section
 
 The app implements audit logging for login attempts. Every login, whether successful or failed, is recorded in the audit_log table with:
 
@@ -66,6 +66,7 @@ Users can view the full audit history by visiting /users/audit. This feature hel
 1.Clone your github repository: git clone <your repositiory link>. 
 2.Install dependencies using npm install. 
 3.Run node index.js to access the Berties Books App.
+
 
 
 
