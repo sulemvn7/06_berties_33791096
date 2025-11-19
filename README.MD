@@ -33,8 +33,11 @@ dotenv (for environment variable management)
 Dotenv  Section
 
 The project uses the dotenv Node.js module to secure database credentials. Database connection details are stored in a .env file and loaded using:
+
 require('dotenv').config();
+
 The connection pool reads credentials from environment variables instead of hardcoding sensitive information in the source code:
+
 const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -47,6 +50,7 @@ const db = mysql.createPool({
 1.Clone your github repository: git clone <your repositiory link>. 
 2.Install dependencies using npm install. 
 3.Run node index.js to access the Berties Books App.
+
 
 
 
