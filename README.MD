@@ -64,10 +64,15 @@ Storing Login Attempts:
 In the /users/loggedin route, after fetching the hashed password from the database, I use bcrypt.compare() to check the submitted password. Regardless of whether the login succeeds or fails, I insert a record into the audit_log table:
 
 let success = result ? 1 : 0;
+
 const auditQuery = "INSERT INTO audit_log (username, success) VALUES (?, ?)";
+
 db.query(auditQuery, [username, success], (err2) => {
+
     if (err2) console.error("Failed to insert into audit_log:", err2);
+
 });
+
 
 
 success = 1 if the password matches, otherwise 0.
@@ -81,6 +86,7 @@ Users can view the full audit history by visiting /users/audit. This feature hel
 1.Clone your github repository: git clone <your repositiory link>. 
 2.Install dependencies using npm install. 
 3.Run node index.js to access the Berties Books App.
+
 
 
 
