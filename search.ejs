@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Books</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9fc;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    table {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+    }
+
+    .no-results {
+      color: #666;
+      font-style: italic;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Search for Books</h1>
+
+  <form action="/books/search" method="post">
+    <input type="text" name="keyword" placeholder="Enter book title..." value="<%= keyword %>" required>
+    <button type="submit">Search</button>
+  </form>
+
+  <% if (booklist.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Book Title</th>
+          <th>Price (£)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% booklist.forEach(function(book) { %>
+          <tr>
+            <td><%= book.id %></td>
+            <td><%= book.name %></td>
+            <td>£<%= Number(book.price).toFixed(2) %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else if (keyword) { %>
+    <p class="no-results">No results found for "<%= keyword %>".</p>
+  <% } %>
+
+  <a href="/">⬅ Back to Home</a>
+</body>
+</html>
+

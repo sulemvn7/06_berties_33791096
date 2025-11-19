@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Welcome to <%=shopData.shopName%></title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        text-align: center;
+        padding-top: 50px;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 40px;
+      }
+      a.menu-link {
+        display: inline-block;
+        margin: 10px 20px;
+        padding: 12px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      a.menu-link:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to <%=shopData.shopName%></h1>
+
+    <!-- Menu Links -->
+    <p><a class="menu-link" href="/about">About <%=shopData.shopName%></a></p>
+    <p><a class="menu-link" href="/books/search">Search for books</a></p>
+    <p><a class="menu-link" href="/books/list">View All Books</a></p>
+    <p><a class="menu-link" href="/books/addbook">Add a New Book</a></p>
+    <p><a class="menu-link" href="/users/register">Register with us</a></p>
+    <p><a class="menu-link" href="/users/login">Login</a></p>
+  </body>
+</html>
+

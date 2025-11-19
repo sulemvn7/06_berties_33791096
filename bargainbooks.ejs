@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bargain Books - Under £20</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #28a745;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bargain Books (Under £20)</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Book Title</th>
+        <th>Price (£)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% bargainBooks.forEach(function(book) { %>
+        <tr>
+          <td><%= book.id %></td>
+          <td><%= book.name %></td>
+          <td>£<%= Number(book.price).toFixed(2) %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
