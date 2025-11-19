@@ -40,13 +40,13 @@ The connection pool reads credentials from environment variables instead of hard
 
 const db = mysql.createPool({
 
-    host: process.env.DB_HOST,
+    host: process.env.BB_HOST,
 
-    user: process.env.DB_USER,
+    user: process.env.BB_USER,
 
-    password: process.env.DB_PASSWORD,
+    password: process.env.BB_PASSWORD,
 
-    database: process.env.DB_NAME,
+    database: process.env.BB_NAME,
 
 });
 
@@ -66,6 +66,7 @@ Users can view the full audit history by visiting /users/audit. This feature hel
 1.Clone your github repository: git clone <your repositiory link>. 
 2.Install dependencies using npm install. 
 3.Run node index.js to access the Berties Books App.
+
 
 
 
