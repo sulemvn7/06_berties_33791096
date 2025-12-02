@@ -19,7 +19,7 @@ The application includes all the existing routes from previous lab 8 work and no
 **Weather Route**
 
 * `/weather` : Displays current weather for a city (uses OpenWeatherMap API).
-* Includes form input for city(London,Manchester e.g) and error handling for invalid city names.
+* Includes form input for city(London,Manchester etc.) and error handling for invalid city names.
 
 **API Routes** (`api.js`)
 
@@ -57,6 +57,7 @@ GET /api/books?sort=price	Returns books sorted by price (ascending)
 1.Clone your github repository: git clone <your repositiory link>. 
 2.Install dependencies using npm install. 
 3.Run node index.js to access the Berties Books App.
+
 
 
 
