@@ -15,14 +15,19 @@ router.get('/books', (req, res, next) => {
     }
 
     // 2. Price range filter
-    if (minprice) {
-        sqlquery += " AND price >= ?";
-        params.push(minprice);
-    }
-    if (maxprice) {
-        sqlquery += " AND price <= ?";
-        params.push(maxprice);
-    }
+   let minprice = req.query.minprice !== undefined ? parseFloat(req.query.minprice) : null;
+   let maxprice = req.query.maxprice !== undefined ? parseFloat(req.query.maxprice) : null;
+
+if (minprice !== null) {
+    sqlquery += " AND price >= ?";
+    params.push(minprice);
+}
+
+if (maxprice !== null) {
+    sqlquery += " AND price <= ?";
+    params.push(maxprice);
+}
+
 
     // 3. Sorting
     if (sort === 'name') {
@@ -42,3 +47,4 @@ router.get('/books', (req, res, next) => {
 });
 
 module.exports = router;
+
