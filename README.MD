@@ -2,7 +2,7 @@
 
 ## Description
 
-The app simulates a small book shop where users can:
+The app simulates a book shop where users can:
 
 * Browse available books
 * Search for books
@@ -57,6 +57,7 @@ GET /api/books?sort=price	Returns books sorted by price (ascending)
 1.Clone your github repository: git clone <your repositiory link>. 
 2.Install dependencies using npm install. 
 3.Run node index.js to access the Berties Books App.
+
 
 
 
