@@ -29,6 +29,16 @@ The application includes all the existing routes from previous lab 8 work and no
   * `minprice` and `maxprice` query parameters to filter by price range
   * `sort` query parameter to sort by `name` or `price`
 
+📡 API Routes (Backend JSON API)
+API Route	Description
+GET /api/books	Returns ALL books in JSON format
+GET /api/books?search=term	Returns books where the name contains “term”
+GET /api/books?minprice=5&maxprice=10	Returns books priced between a user-defined price range
+GET /api/books?sort=name	Returns books sorted by name (ascending)
+GET /api/books?sort=price	Returns books sorted by price (ascending)
+GET /api/books?search=term&sort=price	Combined search + sorting
+GET /api/books?minprice=10&sort=name	Combined price range + sorting
+
 ⚙️ **Technologies Used**
 
 * Node.js
@@ -44,6 +54,7 @@ The application includes all the existing routes from previous lab 8 work and no
 1.Clone your github repository: git clone <your repositiory link>. 
 2.Install dependencies using npm install. 
 3.Run node index.js to access the Berties Books App.
+
 
 
 
