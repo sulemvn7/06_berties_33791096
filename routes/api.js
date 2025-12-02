@@ -1,10 +1,9 @@
-const express = require('express');
+const express = require('express'); 
 const router = express.Router();
 
 // API route to get all books or filtered/sorted books
 router.get('/books', (req, res, next) => {
-    let sqlquery = "SELECT * FROM books WHERE 1=1"; // start with a base query
-
+    let sqlquery = "SELECT * FROM books WHERE 1=1"; // base query
     const params = [];
     const { search, minprice, maxprice, sort } = req.query;
 
@@ -15,19 +14,18 @@ router.get('/books', (req, res, next) => {
     }
 
     // 2. Price range filter
-   let minprice = req.query.minprice !== undefined ? parseFloat(req.query.minprice) : null;
-   let maxprice = req.query.maxprice !== undefined ? parseFloat(req.query.maxprice) : null;
+    const minPriceNum = minprice !== undefined ? parseFloat(minprice) : null;
+    const maxPriceNum = maxprice !== undefined ? parseFloat(maxprice) : null;
 
-if (minprice !== null) {
-    sqlquery += " AND price >= ?";
-    params.push(minprice);
-}
+    if (minPriceNum !== null) {
+        sqlquery += " AND price >= ?";
+        params.push(minPriceNum);
+    }
 
-if (maxprice !== null) {
-    sqlquery += " AND price <= ?";
-    params.push(maxprice);
-}
-
+    if (maxPriceNum !== null) {
+        sqlquery += " AND price <= ?";
+        params.push(maxPriceNum);
+    }
 
     // 3. Sorting
     if (sort === 'name') {
@@ -42,9 +40,8 @@ if (maxprice !== null) {
             res.json({ error: err.message });
             return next(err);
         }
-        res.json(result); // return JSON result
+        res.json(result);
     });
 });
 
 module.exports = router;
-
