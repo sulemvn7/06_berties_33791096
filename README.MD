@@ -1,4 +1,4 @@
-# 06_berties_33791096 Berties Books App
+## 06_berties_33791096 Berties Books App
 
 ## Description
 
@@ -15,7 +15,7 @@ The app simulates a book shop where users can:
 
 The application includes all the existing routes from previous lab 8 work and now includes these newly added routes:
 
-#🌤️ Weather Feature (Part A – API Consumption)
+##🌤️ Weather Feature
 Route: /weather
 
 Fetches current weather using the OpenWeatherMap API
@@ -40,7 +40,7 @@ Error handling for invalid city names
 
 API key stored securely using .env
 
-#**API Routes** (`api.js`)
+##**API Routes** (`api.js`)
 
 All API routes are public—no authentication, as instructed.
 
@@ -78,7 +78,7 @@ GET /api/books?sort=price
 Sorts by price (ascending).
 
 
-#⚙️ **Technologies Used**
+##⚙️ **Technologies Used**
 
 * Node.js
 * Express.js
@@ -89,10 +89,11 @@ Sorts by price (ascending).
 * dotenv (for environment variable management)
 * request (for API calls)
 
-#💻 Installation 
+##💻 Installation 
 1.Clone your github repository: git clone <your repositiory link>. 
 2.Install dependencies using npm install. 
 3.Run node index.js to access the Berties Books App.
+
 
 
 
