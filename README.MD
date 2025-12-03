@@ -15,31 +15,67 @@ The app simulates a book shop where users can:
 
 The application includes all the existing routes from previous lab 8 work and now includes these newly added routes:
 
+🌤️ Weather Feature (Part A – API Consumption)
+Route: /weather
 
-**Weather Route**
+Fetches current weather using the OpenWeatherMap API
 
-* `/weather` : Displays current weather for a city (uses OpenWeatherMap API).
-* Includes form input for city(London,Manchester etc.) and error handling for invalid city names.
+Uses the request module to call the API
+
+Displays weather in a human-friendly format:
+
+Temperature
+
+City name
+
+Humidity
+
+Wind speed (extension)
+
+Includes:
+
+A city input form
+
+Error handling for invalid city names
+
+API key stored securely using .env
 
 **API Routes** (`api.js`)
 
-* `/api/books` : Returns a JSON list of books. Supports:
+All API routes are public—no authentication, as instructed.
 
-  * `search` query parameter to filter by book name
-  * `minprice` and `maxprice` query parameters to filter by price range
-  * `sort` query parameter to sort by `name` or `price`
+Base route: /api/books
 
-API Route	Description
+✔️ Features:
 
-GET /api/books	Returns ALL books in JSON format
+| Feature                | Example                             | Description                             |
+| ---------------------- | ----------------------------------- | --------------------------------------- |
+| **Get all books**      | `/api/books`                        | Returns a JSON array of all books       |
+| **Search filter**      | `/api/books?search=world`           | Returns books where *name LIKE %world%* |
+| **Price range filter** | `/api/books?minprice=5&maxprice=20` | Returns books priced between 5 and 20   |
+| **Sorting**            | `/api/books?sort=name`              | Sorts results by book name              |
+|                        | `/api/books?sort=price`             | Sorts results by price                  |
 
-GET /api/books?search=term	Returns books where the name contains “term”
+✔️ API Behaviour Summary
+GET /api/books
 
-GET /api/books?minprice=15&maxprice=25	Returns books priced between a user-defined price range
+Returns all books in JSON.
 
-GET /api/books?sort=name	Returns books sorted by name (ascending)
+GET /api/books?search=term
 
-GET /api/books?sort=price	Returns books sorted by price (ascending)
+Filters by books containing the search term.
+
+GET /api/books?minprice=X&maxprice=Y
+
+Filters by price between X and Y.
+
+GET /api/books?sort=name
+
+Sorts alphabetically.
+
+GET /api/books?sort=price
+
+Sorts by price (ascending).
 
 
 ⚙️ **Technologies Used**
@@ -57,6 +93,7 @@ GET /api/books?sort=price	Returns books sorted by price (ascending)
 1.Clone your github repository: git clone <your repositiory link>. 
 2.Install dependencies using npm install. 
 3.Run node index.js to access the Berties Books App.
+
 
 
 
