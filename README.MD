@@ -31,7 +31,7 @@ City name
 
 Humidity
 
-Wind speed (extension)
+Wind speed 
 
 Includes:
 
@@ -100,6 +100,7 @@ Sorts by price (ascending).
 1.Clone your github repository: git clone <your repositiory link>. 
 2.Install dependencies using npm install. 
 3.Run node index.js to access the Berties Books App.
+
 
 
 
